@@ -1,48 +1,32 @@
 #include <iostream>
 using namespace std;
-class Method
+void insertionSort(int arr[], int n) 
 {
-	public:	
-	void shellSort(int arra[],int n)
-	{
-		int phase=1;
-		for(int gap=n/2;gap>0;gap/=2)
-		{
-			cout<<"  	Phase numer: "<<phase<<endl;
-			cout<<"	gap is "<<gap<<endl;
-			for(int i=gap;i<n;i++)
-			{
-				int min = arra[i];
-				int j=i-gap;
-				while(j>=0&&arra[j]>min)
-				{
-					arra[j+gap]=arra[j];
-					cout<<"["<<j<<"]"<<"-->"<<"["<<j+gap<<"]"<<endl;
-					j-=gap;
-				}
-				arra[j+gap]=min;
-			}
-			phase++;
-		}
-	}
-	void display(int arra[],int n)
-	{
-		for(int i=0;i<n;i++)
-		{
-			cout<<arra[i]<<" ";
-		}
-		cout<<endl;
-	}
-};
-int main()
+    for (int i = 1; i < n; ++i) 
+    {
+        int key = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && arr[j] > key) 
+        {
+            arr[j + 1] = arr[j];
+            --j;
+        }
+
+        arr[j + 1] = key;
+    }
+}
+int main() 
 {
-	Method m;
-	int arr[] ={7,6,9,4,5,6,6,7,3,1};
-	int n = sizeof(arr)/sizeof(arr[0]);
-	cout<<"Array is:"<<endl;
-	m.display(arr,n);
-	m.shellSort(arr,n);
-	cout<<endl;
-	cout<<"Sorted Array is:"<<endl;
-	m.display(arr,n);
+    int arr[] = {4, 3, 2, 10, 12, 1, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    insertionSort(arr, n);
+
+    cout << "Sorted array: ";
+    for (int i = 0; i < n; ++i) 
+    {
+        cout << arr[i] << " ";
+    }
+
 }
