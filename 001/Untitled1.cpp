@@ -1,39 +1,17 @@
 #include <iostream>
 using namespace std;
-class Method{
-	int isEven;
-	int isOdd;
-	int sum=0;
-	public:
-	void findPairs(int arr[],int n)
-	{
-		for(int i=0;i<n;i++)
-		{
-				if(arr[i]%2==0)
-				{
-					sum+=arr[i];	
-				}
-		}
-		
-				cout<<"sum is: "<<sum<<endl;
-		
-		for(int i=0;i<n;i++)
-		{
-			for(int j=i+1;j<n;j++)
-			{
-					if(arr[i]*arr[j]>=sum)
-					{
-						cout<<arr[i]<<"*"<<arr[j]<<" ";
-					}
-			}
-		}
-	}
-
-};
 int main()
 {
-	Method m;
-	int n=7;
-	int arr1[n]={5,6,4,2,12,7,9};
-	m.findPairs(arr1,n);
+	int arr1[3]={1,2,3};         // Time Complexity: O(1)
+	int arr2[3]={4,5,6};         // Time Complexity: O(1)
+	int arr3[3];         // Time Complexity: O(1)
+	int n=3;
+	for(int i=0;i<n;i++)
+	{
+		arr3[i]=arr1[i]+arr2[i];	// Time Complexity: O(n) // it is formally O(1)
+	}
+	for(int i=0;i<3;i++)
+	{
+		cout<<arr3[i]<<" ";	// Time Complexity: O(n) // it is formally O(1)
+	}
 }
