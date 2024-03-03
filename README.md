@@ -1,5 +1,4 @@
 # DSA-zeroToHero
-```markdown
 # Time Complexity vs Space Complexity
 
 Space complexity and time complexity are two different aspects used to analyze the performance of algorithms.
@@ -23,5 +22,3 @@ Space complexity and time complexity are two different aspects used to analyze t
 ### Simple Example: Consider searching for a specific element in an array:
 - **Time Complexity Example:** Linear search has a time complexity of O(n), where n is the size of the array. As the array size grows, the time taken for a linear search grows linearly.
 - **Space Complexity Example:** Linear search has a space complexity of O(1), constant space, because it doesn't require additional memory proportional to the input size. It only needs a few variables regardless of the array size.
-```
-This is ready to be used as a GitHub README markdown.
