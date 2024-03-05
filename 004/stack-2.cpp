@@ -44,7 +44,7 @@ class Stack
 	{
 		if (isEmpty())
 		{
-			cout << "Stack is emplty" << endl;	
+			cout << "Stack is empty" << endl;	
 		}
 		else
 		{
