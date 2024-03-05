@@ -16,12 +16,12 @@ class Method
 				{
 					if(arr[j]==value)
 					{
-						cout<<"Duplicate value"<<endl;
+						cout<<"Duplicate value"<< endl;
 						break;
 					}
 					else
 					{
-						arr[j]=value;
+						arr[j] = value;
 					}
 				}
 			}
