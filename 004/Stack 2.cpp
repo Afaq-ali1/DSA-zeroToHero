@@ -32,7 +32,7 @@ class Stack
 	{
 		if (isFull())
 		{
-			cout << "Cannot push " << endl;
+			cout << "Cannot push" << endl;
 		}
 		else
 		{
