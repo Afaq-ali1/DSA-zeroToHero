@@ -30,12 +30,12 @@ class Stack{
 		{
 			if (isFull())
 			{
-				cout << "Cannot push " << endl;
+				cout << "Cannot push "<< endl;
 			}
 			else
 			{
 				stack[++top] = x;
-				cout << "Value : "<<x<<" pushed" << endl;
+				cout << "Value : "<<x<<" pushed"<< endl;
 			}
 		}
 		void pop()
