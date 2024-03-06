@@ -1,11 +1,11 @@
 #include <iostream>
+#define size 5
 using namespace std;
 class Queue
 {
 	public:
-		static const int size=5;
 	int front,rear;
-	int que[size];
+	int queue[size];
 		Queue()
 		{
 			front=-1;
@@ -25,15 +25,17 @@ class Queue
 			{
 				return true;
 			}
-				return false;
-		}
-		void enQueue()
-		{
-			int element;
-			if (isEmpty())
+			else
 			{
-				cout<<"Queue is empty"<<endl;
-				return ;
+				return false;
+				
+			}
+		}
+		void enQueue(int element)
+		{
+			if (isFull())
+			{
+				cout<<"Queue is Full"<<endl;
 			}
 			else
 			{
@@ -42,8 +44,8 @@ class Queue
 					front=0;
 				}
 				rear++;
-				que[rear]=element;
-				cout<<"Inserted"<<element<<endl;
+				queue[rear]=element;
+				cout<<"Inserted "<<element<<endl;
 			}
 		}
 		void DeQueue()
@@ -56,7 +58,7 @@ class Queue
 			}
 			else
 			{
-				element=que[front];
+				element=queue[front];
 				if(front>=rear)
 				{
 					front=-1;
@@ -79,7 +81,7 @@ class Queue
 			{
 				for(int i=front;i<=rear;i++)
 				{
-					cout<<que[i]<<" ";
+					cout<<queue[i]<<" ";
 				}	
 			}
 		}
@@ -88,6 +90,13 @@ int main()
 {
 	Queue q;
 	q.enQueue(1);
+	q.enQueue(2);
+	q.enQueue(3);
+	q.enQueue(4);
+	q.enQueue(5);
 	q.DeQueue();
+	q.DeQueue();
+	q.DeQueue();
+	q.enQueue(6);
 	q.display();	
 }	
