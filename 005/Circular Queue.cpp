@@ -1,11 +1,12 @@
 #include <iostream>
+#define size 3
 using namespace std;
 class Queue
 {
 	public:
-		static const int size=5;
+//		static const int size=3;
 	int front,rear;
-	int que[size];
+	int queue[size];
 		Queue()
 		{
 			front=-1;
@@ -13,7 +14,8 @@ class Queue
 		}
 		bool isFull()
 		{
-			if(front==0&&rear==size-1)
+		int maxSize=size; 
+			if((rear+1)%maxSize==front)
 			{
 				return true;
 			}
@@ -27,13 +29,11 @@ class Queue
 			}
 				return false;
 		}
-		void enQueue()
+		void enQueue(int element)
 		{
-			int element;
-			if (isEmpty())
+			if (isFull())
 			{
-				cout<<"Queue is empty"<<endl;
-				return ;
+				cout<<"Queue is full"<<endl;
 			}
 			else
 			{
@@ -42,8 +42,8 @@ class Queue
 					front=0;
 				}
 				rear=(rear+1)%size;
-				que[rear]=element;
-				cout<<"Inserted"<<element<<endl;
+				queue[rear]=element;
+				cout<<"Inserted "<<element<<endl;
 			}
 		}
 		void DeQueue()
@@ -56,7 +56,7 @@ class Queue
 			}
 			else
 			{
-				element=que[front];
+				element=queue[front];
 				if(front==rear)
 				{
 					front=-1;
@@ -69,7 +69,7 @@ class Queue
 			}
 			cout<<"Deleted->"<<element<<endl;
 		}
-		void display()
+		void show()
 		{
 			if (isEmpty())
 			{
@@ -77,17 +77,21 @@ class Queue
 			}
 			else
 			{
-				for(int i=front;i<=rear;i++)
+				for(int i=front;i!=rear;i=(i+1)%size)
 				{
-					cout<<que[i]<<" ";
-				}	
+					cout<<queue[i]<<" ";
+				}
+					cout<<queue[rear];
 			}
 		}
 };
 int main()
 {
 	Queue q;
-	q.enQueue();
+	q.enQueue(1);
+	q.enQueue(2);
+	q.enQueue(3);
 	q.DeQueue();
-	q.display();	
+	q.enQueue(8);
+	q.show();
 }	
