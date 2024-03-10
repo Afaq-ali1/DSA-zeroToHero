@@ -69,7 +69,7 @@ class Queue
 			}
 			cout<<"Deleted->"<<element<<endl;
 		}
-		void show()
+		void display()
 		{
 			if (isEmpty())
 			{
@@ -93,5 +93,5 @@ int main()
 	q.enQueue(3);
 	q.DeQueue();
 	q.enQueue(8);
-	q.show();
+	q.display();
 }	
