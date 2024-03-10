@@ -25,11 +25,8 @@ class Queue
 			{
 				return true;
 			}
-			else
-			{
 				return false;
-				
-			}
+			
 		}
 		void enQueue(int element)
 		{
