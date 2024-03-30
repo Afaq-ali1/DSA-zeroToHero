@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
-struct Node{
-		int data;
-		Node* nextNode;
+struct Node
+{
+	int data;
+	Node* nextNode;
 };
 int main()
 {
