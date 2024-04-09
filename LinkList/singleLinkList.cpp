@@ -105,6 +105,7 @@ class LinkedList
 int main() 
 {
     LinkedList l;
+	
     l.addNode(22);
     l.addNode(23);
     l.addFirst(21);
