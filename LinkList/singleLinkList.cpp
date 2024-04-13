@@ -9,6 +9,7 @@ struct Node
 
 class LinkedList 
 {
+
     Node* head;
     Node* tail;
 
