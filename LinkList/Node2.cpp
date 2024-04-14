@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-struct Node{
+struct Node
+{
 		int data;
 		Node* nextNode;
 };
