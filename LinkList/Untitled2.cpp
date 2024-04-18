@@ -169,7 +169,17 @@ class doubleLinkList{
 					
 				}
 			}
-		}		
+		}
+		void insertionSort()
+		{
+			if(head==NULL)
+			{
+				cout<<"List is emplty.nothing to sort";
+				return;
+			}
+
+			
+		}
 };
 int main()
 {
