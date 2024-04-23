@@ -177,7 +177,28 @@ class doubleLinkList{
 				cout<<"List is emplty.nothing to sort";
 				return;
 			}
-
+			Node* current=head->nextNode;
+			while(current!=NULL)
+			{
+				int key=current->data;
+				Node* prevNod=cur->prev;
+				while(prevNod!=NULL&&prevNod->data>key)
+				{
+					Node* nextNode=prevNod->nextNode;
+					nextNode->data=prevNod->data;
+					prevNod=prevNode->prevNode;
+				}
+				if(prevNod==NULL)
+				{
+					head->data=key;
+				}
+				else
+				{
+					Node* next=prevNod->nextNode;
+					next->data=key;
+				}
+				current=current->nextNode;
+			}
 			
 		}
 };
