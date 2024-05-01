@@ -22,11 +22,11 @@ class BST{
 		Node* current=root;
 		while(true)
 		{
-			if(data>current->data)
+			if(data > current->data)
 			{
 				if(!current->right)
 				{
-					current->right=newNode;
+					current->right = newNode;
 					return;
 					
 				}
